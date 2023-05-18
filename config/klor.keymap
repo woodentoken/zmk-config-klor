@@ -34,35 +34,6 @@
                 <&kp>,
                 <&kp>;
         };
-        sesc: sesc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SESC";
-            #binding-cells = <0>;
-            bindings =
-                <&kp S>,
-                <&kp ESCAPE>;
-        };
-        eesc: eesc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "EESC";
-            #binding-cells = <0>;
-            bindings =
-                <&kp E>,
-                <&kp ESCAPE>;
-        };
-        fiveesc: fiveesc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "FIVEESC";
-            #binding-cells = <0>;
-            bindings =
-                <&kp NUMBER_5>,
-                <&kp ESCAPE>;
-        };
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-        };
         mode_tap: mode_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MODE_TAP";
@@ -95,13 +66,11 @@
         reset {
             bindings = <&sys_reset>;
             key-positions = <10 22>;
-            layers = <>;
         };
 
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <10 22>;
-            layers = <>;
         };
 
         bt_clear2 {
