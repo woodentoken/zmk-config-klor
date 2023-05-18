@@ -38,6 +38,19 @@
 
     combos {
         compatible = "zmk,combos";
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <14 17>;
+            layers = <0 1 2 3>;
+            timeout-ms = <0>;
+        };
+
+        layer_3 {
+            bindings = <&mo 3>;
+            key-positions = <39 40>;
+            layers = <0 1 2>;
+        };
     };
 
     keymap {
@@ -62,10 +75,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-            &kp Q  &kp W         &kp F        &kp P      &kp G                          &kp J        &kp L      &kp U    &kp Y  &kp SEMI
-&kp ESCAPE  &kp A  &kp R         &kp S  &hm LSHFT T      &kp D                          &kp H  &hm RSHFT N      &kp E    &kp I     &kp O   &kp SQT
-   &kp TAB  &kp Z  &kp X         &kp C        &kp V      &kp B  &kp CAPSLOCK  &trans    &kp K        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                          &kp LEFT_WIN    &kp LCTRL  &kp SPACE         &mo 1   &mo 2  &kp RET     &kp RALT   &kp BSPC
+            &kp Q  &kp W         &kp F        &kp P      &kp G                   &kp J        &kp L      &kp U    &kp Y  &kp SEMI
+&kp ESCAPE  &kp A  &kp R         &kp S  &hm LSHFT T      &kp D                   &kp H  &hm RSHFT N      &kp E    &kp I     &kp O   &kp SQT
+   &kp TAB  &kp Z  &kp X         &kp C        &kp V      &kp B  &tog 1  &none    &kp K        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                          &kp LEFT_WIN    &kp LCTRL  &kp SPACE   &mo 1  &mo 2  &kp RET     &kp RALT   &kp BSPC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -92,7 +105,7 @@
             bindings = <
                  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LBRC                  &kp RBRC  &kp PAGE_UP   &kp CLEAR  &kp PAGE_DOWN        &trans
 &kp KP_EQUAL   &kp PLUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LBKT                  &kp RBKT     &kp LEFT      &kp UP      &kp RIGHT  &kp KP_MINUS  &kp KP_EQUAL
-      &trans  &kp ASTRK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LPAR  &trans  &trans  &kp RPAR     &kp HOME    &kp DOWN        &kp END  &kp KP_SLASH        &trans
+      &trans  &kp ASTRK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LPAR  &tog 2  &trans  &kp RPAR     &kp HOME    &kp DOWN        &kp END  &kp KP_SLASH        &trans
                                              &trans        &trans    &trans   &mo 1   &mo 2    &trans       &trans  &kp DELETE
             >;
 
@@ -120,7 +133,7 @@
             bindings = <
                        &kp F3        &kp F4        &kp F5        &kp F6        &trans                        &trans       &kp F13       &kp F14       &kp F15       &kp F16
 &kp C_VOLUME_UP  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp C_BRI_UP
-   &kp C_VOL_DN        &trans        &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans  &kp C_BRI_DN
+   &kp C_VOL_DN        &trans        &trans        &trans        &trans        &trans  &tog 3  &trans        &trans        &trans        &trans        &trans        &trans  &kp C_BRI_DN
                                                    &trans        &trans        &trans   &mo 3   &mo 2        &trans        &trans        &trans
             >;
 
