@@ -28,7 +28,6 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings =
                 <&kp>,
@@ -42,8 +41,19 @@
                 <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <5>;
-            flavor = "balanced";
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+        };
+        tap_mode: tap_mode {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_MODE";
+            bindings =
+                <&kp>,
+                <&mo>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <75>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -94,7 +104,7 @@
                      &kp Q           &kp W               &kp F              &kp P            &kp B                                      &kp J                  &kp L            &kp U            &kp Y      &kp SQT
 &kp ESCAPE  &hm LEFT_GUI A  &hm LEFT_ALT R         &hm LCTRL S   &hm LEFT_SHIFT T            &kp G                                      &kp M           &hm RSHIFT N      &hm RCTRL E  &hm RIGHT_ALT I  &hm RMETA O      &kp SLASH
    &kp TAB           &kp Z           &kp X               &kp C              &kp D            &kp V            &none  &none              &kp K                  &kp H        &kp COMMA          &kp DOT    &kp COLON  &kp BACKSLASH
-                                            &mode_tap 6 ESCAPE  &mode_tap 1 SPACE  &mode_tap 2 TAB  &kp KP_NUMBER_0  &none  &mode_tap 3 ENTER  &mode_tap 4 BACKSPACE  &mode_tap 5 DEL
+                                            &mode_tap 6 ESCAPE  &mode_tap 1 SPACE  &tap_mode TAB 2  &kp KP_NUMBER_0  &none  &mode_tap 3 ENTER  &mode_tap 4 BACKSPACE  &mode_tap 5 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
