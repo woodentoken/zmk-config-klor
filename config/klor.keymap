@@ -52,9 +52,27 @@
             layers = <0 1 2>;
         };
 
-        new_combo {
-            bindings = <&kp ENTER>;
-            key-positions = <36 43 39 40>;
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <10 22>;
+            layers = <1>;
+        };
+
+        bt_clear {
+            bindings = <&bt BT_CLR>;
+            key-positions = <10 22>;
+            layers = <2>;
+        };
+
+        bt_clear2 {
+            bindings = <&bt BT_CLR>;
+            key-positions = <10 22>;
+            layers = <0>;
+        };
+
+        boot {
+            bindings = <&bootloader>;
+            key-positions = <22 10>;
             layers = <3>;
         };
     };
