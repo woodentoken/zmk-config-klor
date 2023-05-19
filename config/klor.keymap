@@ -52,19 +52,19 @@
         sys_reset {
             bindings = <&sys_reset>;
             key-positions = <10 22>;
-            layers = <1 2 3 4 5 6>;
+            layers = <1 3 2 4 5>;
         };
 
         bootloader {
             bindings = <&bootloader>;
             key-positions = <11 23>;
-            layers = <1 2 3 4 5 6>;
+            layers = <1 3 2 4 5>;
         };
 
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <12 24>;
-            layers = <1 2 3 4 5 6>;
+            layers = <1 3 2 4 5>;
         };
     };
 
@@ -90,10 +90,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-                      &kp Q           &kp W               &kp F              &kp P            &kp B                                &kp J                  &kp L            &kp U            &kp Y      &kp SQT
-&kp ESCAPE  &hm LEFT_META A  &hm LEFT_ALT R         &hm LCTRL S   &hm LEFT_SHIFT T            &kp G                                &kp M           &hm RSHIFT N      &hm RCTRL E  &hm RIGHT_ALT I  &hm RMETA O      &kp SLASH
-   &kp TAB            &kp Z           &kp X               &kp C              &kp D            &kp V  &kp KP_N0  &none              &kp K                  &kp H        &kp COMMA          &kp DOT    &kp COLON  &kp BACKSLASH
-                                             &mode_tap 6 ESCAPE  &mode_tap 1 SPACE  &mode_tap 2 TAB      &none  &none  &mode_tap 3 ENTER  &mode_tap 4 BACKSPACE  &mode_tap 5 DEL
+                      &kp Q           &kp W        &kp F             &kp P            &kp B                                                 &kp J                  &kp L        &kp U            &kp Y    &kp SQT
+&hm LEFT_META ESCAPE  &kp A  &hm LEFT_ALT R  &hm LCTRL S  &hm LEFT_SHIFT T            &kp G                                                 &kp M           &hm RSHIFT N  &hm RCTRL E  &hm RIGHT_ALT I      &kp O      &kp SLASH
+             &kp TAB  &kp Z           &kp X        &kp C             &kp D            &kp V      &kp KP_N0               &none              &kp K                  &kp H    &kp COMMA          &kp DOT  &kp COLON  &kp BACKSLASH
+                                               &kp LSHFT         &kp SPACE  &mode_tap 1 TAB  &kp LEFT_META  &mode_tap 4 DELETE  &mode_tap 2 ENTER  &mode_tap 3 BACKSPACE    &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -101,24 +101,24 @@
 
         navigation {
             bindings = <
-                &none             &none     &none      &none     &none                          &kp K_REDO    &kp K_PASTE  &kp K_COPY      &kp K_CUT  &kp K_UNDO
-&trans  &kp LEFT_META  &kp LEFT_CONTROL  &kp LALT  &kp LSHFT  &kp CAPS                               &none       &kp LEFT    &kp DOWN   &kp UP_ARROW   &kp RIGHT  &none
- &none          &none             &none     &none      &none     &none  &kp KP_NUMBER_1  &none  &kp INSERT       &kp HOME   &kp PG_UP  &kp PAGE_DOWN     &kp END  &none
-                                            &none      &mo 1     &none            &none  &none   &kp ENTER  &kp BACKSPACE  &kp DELETE
+                      &none         &none      &none      &none  &none                          &kp K_REDO    &kp K_PASTE  &kp K_COPY      &kp K_CUT  &kp K_UNDO
+&hm LEFT_META ESCAPE  &none  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &none                               &none       &kp LEFT    &kp DOWN   &kp UP_ARROW   &kp RIGHT  &none
+               &none  &none         &none      &none      &none  &none  &kp KP_NUMBER_1  &none  &kp INSERT       &kp HOME   &kp PG_UP  &kp PAGE_DOWN     &kp END  &none
+                                           &kp LSHFT      &none  &mo 1    &kp LEFT_META  &none   &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
             label = "NAV";
         };
 
-        mouse {
+        numbers {
             bindings = <
-                &none     &none             &none      &none  &none                          &none  &kp K_REDO  &kp K_COPY     &kp K_CUT  &kp K_UNDO
-&trans  &kp LEFT_META  &kp LALT  &kp LEFT_CONTROL  &kp LSHFT  &none                          &none    &kp LEFT    &kp DOWN  &kp UP_ARROW   &kp RIGHT  &none
- &none          &none     &none             &none      &none  &none  &kp KP_NUMBER_2  &none  &none    &kp HOME       &none         &none     &kp END  &none
-                                            &none      &none  &mo 2            &none  &none  &none       &none       &none
+               &kp GRAVE  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9      &kp MINUS                               &none      &none      &none          &none  &none
+  &kp SQT  &kp SEMICOLON  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp EQUAL                        &kp NUMBER_0  &kp RSHFT  &kp RCTRL  &kp RIGHT_ALT  &none  &none
+&kp COMMA     &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp ASTRK      &kp KP_N2  &none         &none      &none      &none          &none  &none  &none
+                                           &kp LSHFT     &kp SLASH  &kp BACKSLASH  &kp LEFT_META  &none         &mo 2      &mo 3      &none
             >;
 
-            label = "MOUSE";
+            label = "NUM";
         };
 
         symbols {
@@ -138,32 +138,21 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-        &kp GRAVE    &kp AMPERSAND  &kp ASTERISK  &kp RIGHT_PARENTHESIS      &kp LEFT_BRACKET                              &kp RIGHT_BRACKET      &none              &none     &none      &none
-&trans  &kp COLON       &kp DOLLAR   &kp PERCENT              &kp CARET        &kp LEFT_BRACE                                &kp RIGHT_BRACE  &kp RSHFT  &kp RIGHT_CONTROL  &kp RALT  &kp RMETA  &none
-&trans  &kp TILDE  &kp EXCLAMATION   &kp AT_SIGN               &kp HASH  &kp LEFT_PARENTHESIS  &kp KP_NUMBER_3  &none  &kp RIGHT_PARENTHESIS      &none              &none     &none      &none  &none
-                                       &kp EQUAL              &kp MINUS          &kp ASTERISK            &none  &none                  &mo 3      &none              &none
+                      &kp TILDE    &kp AMPERSAND  &kp ASTERISK  &kp BACKSLASH      &kp LEFT_BRACKET                              &kp RIGHT_BRACKET      &none              &none     &none  &none
+      &kp DQT         &kp COLON       &kp DOLLAR   &kp PERCENT      &kp CARET        &kp LEFT_BRACE                                &kp RIGHT_BRACE  &kp RSHFT  &kp RIGHT_CONTROL  &kp RALT  &none  &none
+&kp LESS_THAN  &kp GREATER_THAN  &kp EXCLAMATION   &kp AT_SIGN       &kp HASH  &kp LEFT_PARENTHESIS  &kp KP_NUMBER_3  &none  &kp RIGHT_PARENTHESIS      &none              &none     &none  &none  &none
+                                                     &kp LSHFT       &kp FSLH         &kp BACKSLASH    &kp LEFT_META  &none                  &none      &mo 3              &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        numbers {
-            bindings = <
-        &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                          &none      &none      &none          &none           &none
-&trans     &kp SEMICOLON  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6          &kp EQUAL                          &none  &kp RSHFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_META  &none
- &none         &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp BACKSLASH  &kp KP_NUMBER_4  &none  &none      &none      &none          &none           &none  &none
-                                        &kp NUMBER_0    &kp PERIOD          &kp MINUS            &none  &none  &none      &mo 4      &none
-            >;
-
-            label = "NUM";
-        };
-
         fun {
             bindings = <
-        &kp F12  &kp F7              &kp F8     &kp F9  &kp PRINTSCREEN                          &none      &none              &none          &none      &none
-&trans  &kp F11  &kp F4              &kp F5     &kp F6   &kp SCROLLLOCK                          &none  &kp RSHFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RMETA  &none
- &none  &kp F10  &kp F1              &kp F2     &kp F3  &kp PAUSE_BREAK  &kp KP_NUMBER_5  &none  &none      &none              &none          &none      &none  &none
-                         &kp K_CONTEXT_MENU  &kp SPACE          &kp TAB            &none  &none  &none      &none              &mo 5
+                      &kp F15  &kp F7        &kp F8     &kp F9          &kp F16                    &kp F12      &none              &none          &none  &none
+        &kp C_BRI_UP  &kp F14  &kp F4        &kp F5     &kp F6     &kp CAPSLOCK                    &kp F11  &kp RSHFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none  &none
+&kp C_BRIGHTNESS_DEC  &kp F13  &kp F1        &kp F2     &kp F3  &kp PRINTSCREEN  &kp KP_N4  &none  &kp F10      &none              &none          &none  &none  &none
+                                       &kp LEFT_ALT  &kp SPACE          &kp TAB      &mo 5  &mo 4    &none      &none              &none
             >;
 
             label = "FUN";
@@ -171,10 +160,10 @@
 
         admin {
             bindings = <
-        &bootloader    &bt BT_PRV    &bt BT_CLR    &bt BT_NXT  &none                          &none  &none  &none  &none  &bootloader
-&trans        &none  &bt BT_SEL 3  &bt BT_SEL 4         &none  &none                          &none  &none  &none  &none        &none  &none
- &none        &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp KP_NUMBER_6  &none  &none  &none  &none  &none        &none  &none
-                                          &mo 6         &none  &none            &none  &none  &none  &none  &none
+                      &bootloader    &bt BT_PRV    &bt BT_CLR    &bt BT_NXT  &none                    &none  &none  &none  &none  &bootloader
+&hm LEFT_META ESCAPE        &none  &bt BT_SEL 3  &bt BT_SEL 4         &none  &none                    &none  &none  &none  &none        &none  &none
+               &none        &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp KP_N5  &none  &none  &none  &none  &none        &none  &none
+                                                        &none         &none  &none      &mo 5  &none  &none  &none  &none
             >;
 
             label = "ADMIN";
