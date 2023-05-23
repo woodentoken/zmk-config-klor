@@ -149,10 +149,10 @@
 
         fun {
             bindings = <
-                      &kp F15  &kp F7        &kp F8     &kp F9          &kp F16                    &kp F12      &none              &none          &none  &none
-        &kp C_BRI_UP  &kp F14  &kp F4        &kp F5     &kp F6     &kp CAPSLOCK                    &kp F11  &kp RSHFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none  &none
-&kp C_BRIGHTNESS_DEC  &kp F13  &kp F1        &kp F2     &kp F3  &kp PRINTSCREEN  &kp KP_N4  &none  &kp F10      &none              &none          &none  &none  &none
-                                       &kp LEFT_ALT  &kp SPACE          &kp TAB      &mo 5  &mo 4    &none      &none              &none
+                 &kp F15  &kp F7        &kp F8     &kp F9          &kp F16                    &kp F12      &none              &none          &none  &none
+&kp C_VOLUME_UP  &kp F14  &kp F4        &kp F5     &kp F6     &kp CAPSLOCK                    &kp F11  &kp RSHFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &none  &none
+   &kp C_VOL_DN  &kp F13  &kp F1        &kp F2     &kp F3  &kp PRINTSCREEN  &kp KP_N4  &none  &kp F10      &none              &none          &none  &none  &none
+                                  &kp LEFT_ALT  &kp SPACE          &kp TAB      &mo 5  &mo 4    &none      &none              &none
             >;
 
             label = "FUN";
